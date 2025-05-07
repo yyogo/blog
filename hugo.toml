@@ -1,0 +1,4 @@
+baseURL = 'https://yyogo.com/'
+languageCode = 'en-us'
+title = "Yogo's Blog"
+theme = 'terminal'
