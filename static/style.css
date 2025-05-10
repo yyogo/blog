@@ -50,3 +50,29 @@ html[dir="rtl"] .theme-toggle {
   margin-left: 0;
   margin-right: 15px;
 }
+
+@media print {
+  body {
+    font: 12pt serif;
+    color: black;
+    background: white;
+  }
+
+  nav, header, footer, .menu, .post-tags, .theme-toggle {
+    display: none !important;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+
+  pre, code {
+    background: #eee !important;
+    color: black !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+  }
+}
