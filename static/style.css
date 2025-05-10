@@ -1,0 +1,52 @@
+:root {
+  --background: #1a170f;
+  --foreground: #eceae5;
+  --accent: #d982d6;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fff6f6;
+    --foreground: #462d2d;
+    --accent: #cc6099;
+  }
+}
+/* Only active when the JS has put <html data-scheme="dark"> on the page */
+html[data-theme="light"]{
+  /* background / text */
+  --background: #fff6f6;
+  --foreground: #462d2d;
+
+  /* accent colours (match whatever Terminal palette you use) */
+  --accent:    #584665;
+  /* --primary-dark: #00c46c; 
+  --secondary:  #ff5c57; */
+  /* …add any others you rely on… */
+}
+/* Toggle button styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-alpha-20);
+}
+
+/* RTL language support for the toggle */
+html[dir="rtl"] .theme-toggle {
+  margin-left: 0;
+  margin-right: 15px;
+}

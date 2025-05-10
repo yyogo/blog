@@ -2,3 +2,115 @@ baseURL = 'https://yyogo.com/'
 languageCode = 'en-us'
 title = "Yogo's Blog"
 theme = 'terminal'
+
+# Required for Chroma and the custom syntax highlighting.
+[markup.highlight]
+  noClasses = false
+
+
+[params]
+  # dir name of your main content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
+
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 3
+
+  # show selector to switch language
+  showLanguageSelector = true
+
+  # set theme to full screen width
+  fullWidthTheme = false
+
+  # center theme with default width
+  centerTheme = true
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  # With this option you don't have to put the `cover` param in a front-matter.
+  autoCover = true
+
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  showLastUpdated = false
+  customJS = ["dark-mode.js"]
+
+[languages]
+  [languages.en]
+    languageCode = 'en-US'
+    languageName = "English"
+    title = "Yogo"
+
+    [languages.en.params]
+      subtitle = "Personal musings, thoughts, and ideas"
+      owner = "Yogo"
+      keywords = ""
+      copyright = ""
+      menuMore = "Show more"
+      readMore = "Keep reading"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      minuteReadingTime = "min read"
+      words = "words"
+
+      [languages.en.params.logo]
+        logoText = "Yogo's Blog"
+        logoHomeLink = "/"
+
+      [languages.en.menu]
+        [[languages.en.menu.main]]
+          identifier = "tags"
+          name = "Tags"
+          url = "/tags"
+        [[languages.en.menu.main]]
+          identifier = "categories"
+          name = "Categories"
+          url = "/categories"
+        [[languages.en.menu.main]]
+          identifier = "about"
+          name = "About"
+          url = "/about"
+
+    [languages.he]
+        languageName = "עברית"
+        languageCode = 'he-IL'
+        title = "יוגו"
+        languageDirection = "rtl"
+    
+        [languages.he.params]
+            subtitle = "מחשבות, רעיונות ודברים שקרו לי"
+            owner = "יוגו"
+            keywords = ""
+            copyright = ""
+            menuMore = "הצג עוד"
+            readMore = "המשך לקרוא"
+            readOtherPosts = "קרא פוסטים נוספים"
+            newerPosts = "פוסטים חדשים יותר"
+            olderPosts = "פוסטים ישנים יותר"
+            missingContentMessage = "הדף לא נמצא..."
+            missingBackButtonLabel = "חזרה לדף הבית"
+            minuteReadingTime = "דקות קריאה"
+            words = "מילים"
+         [languages.he.params.logo]
+            logoText = "הבלוג של יוגו"
+            logoHomeLink = "/he"
+            [languages.he.menu]
+                [[languages.he.menu.main]]
+                    identifier = "home"
+                    name = "בית"
+                    url = "/he"
+                [[languages.he.menu.main]]
+                    identifier = "about"
+                    name = "אודות"
+                    url = "/he/about"
+
+
+[module]
+  # In case you would like to make changes to the theme and keep it locally in you repository,
+  # uncomment the line below (and correct the local path if necessary).
+  # --
+  replacements = "github.com/panr/hugo-theme-terminal/v4 -> terminal"
+[[module.imports]]
+  path = 'github.com/panr/hugo-theme-terminal/v4'

@@ -1,0 +1,37 @@
+<button id="theme-switch"
+        title="Toggle color scheme"
+        aria-label="Toggle color scheme">🌓</button>
+
+<!-- <link rel="stylesheet" href="{{ "css/dark-vars.css" | relURL }}"> -->
+<script defer>
+ // Check for saved theme preference or default to 'dark'
+ const currentTheme = localStorage.getItem('theme') || 'dark';
+  
+  // Apply the saved theme on load
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  // Toggle function
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    // Set the new theme
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+  document.getElementById('theme-switch').addEventListener('click', toggleTheme);
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href="#toggle-theme"]')
+            .forEach(a => a.addEventListener('click', e => {
+              e.preventDefault();
+              toggleTheme();
+            }));
+  });
+</script>
+
+<style>
+/* just enough styling for the button; tweak as you like */
+#theme-switch{
+  position:fixed;right:1rem;bottom:1rem;
+  background:none;border:none;font-size:1.4rem;cursor:pointer}
+</style>
