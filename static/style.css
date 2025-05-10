@@ -50,3 +50,7 @@ html[dir="rtl"] .theme-toggle {
   margin-left: 0;
   margin-right: 15px;
 }
+
+.on-list > .post-tags {
+  display: none;
+}
