@@ -6,7 +6,8 @@ theme = 'terminal'
 # Required for Chroma and the custom syntax highlighting.
 [markup.highlight]
   noClasses = false
-
+[markup.goldmark.renderHooks.link]
+  enableDefault = true
 
 [params]
   # dir name of your main content (default is `content/posts`).
